@@ -181,7 +181,6 @@ io.on('connection',socket => {
             removeRoom(room);
             io.emit('message',{message:`Server : Room ${room} has been deleted`});
             io.to(room).emit('redirection',{link: '/'});
-            //enfaite si ca deco tout le monde ca devrais passer par discconect non ?
         })
 
         socket.on('disconnect',() => {
